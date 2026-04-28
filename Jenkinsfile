@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-stage('Clone') {
-    steps {
-        git branch: 'main', url: 'https://github.com/SreeChetana/ci-cd-app.git'
-    }
-}            }
-        }
 
         stage('Build Docker Image') {
             steps {
