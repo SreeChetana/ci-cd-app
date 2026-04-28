@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-cd-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ci-cd-app
+  template:
+    metadata:
+      labels:
+        app: ci-cd-app
+    spec:
+      containers:
+      - name: app-container
+        image: chetana12105/ci-cd-app
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
